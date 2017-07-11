@@ -1,0 +1,47 @@
+mysql:
+create table if not exists dim_gcdc_customer(
+id int comment ' 企业ID ',
+name varchar(200) comment ' 企业名称 ',
+dq varchar(200)  comment ' 地区 ',
+industry varchar(200)  comment ' 行业 ',
+ecomp_id int comment ' 机构id ',
+ecomp_root_id int comment ' 机构root_id ',
+ecomp_version int comment ' 企业版本 ',
+sales_user_id int comment ' 当前销售顾问id ',
+sales_user_name varchar(50)  comment ' 当前销售顾问姓名 ',
+sales_org_id int comment ' 当前销售部门id ',
+sales_org_name varchar(200)  comment ' 当前销售部门名称 ',
+sales_branch_id int comment ' 当前销售分公司 ',
+sales_branch_name varchar(200)  comment ' 当前销售分公司名称 ',
+serviceuser_id int comment ' 招服ID ',
+serviceuser_name varchar(200)  comment ' 招服姓名 ',
+service_teamorg_id int comment ' 招服团队ID ',
+service_teamorg_name varchar(200)  comment ' 招服团队名称 ',
+service_branch_id int comment '招服所属分公司',
+service_branch_name varchar(200)  comment '招服所属分公司名称',
+creation_timestamp  timestamp default CURRENT_TIMESTAMP comment ' 时间戳 ',
+primary key (id)
+);
+hive:
+create table if not exists dim_gcdc_customer(
+id int comment ' 企业ID ',
+name string comment ' 企业名称 ',
+dq string comment ' 地区 ',
+industry string comment ' 行业 ',
+ecomp_id int comment ' 机构id ',
+ecomp_root_id int comment ' 机构root_id ',
+ecomp_version int comment ' 企业版本 ',
+sales_user_id int comment ' 当前销售顾问id ',
+sales_user_name string comment ' 当前销售顾问姓名 ',
+sales_org_id int comment ' 当前销售部门id ',
+sales_org_name string comment ' 当前销售部门名称 ',
+sales_branch_id int comment ' 当前销售分公司 ',
+sales_branch_name string comment ' 当前销售分公司名称 ',
+serviceuser_id int comment ' 招服ID ',
+serviceuser_name string comment ' 招服姓名 ',
+service_teamorg_id int comment ' 招服团队ID ',
+service_teamorg_name string comment ' 招服团队名称 ',
+service_branch_id int comment '招服所属分公司',
+service_branch_name string comment '招服所属分公司名称',
+creation_timestamp timestamp comment ' 时间戳 '
+);
